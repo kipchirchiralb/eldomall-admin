@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+</head>
+
+<body>
+    <h1>Add new Product</h1>
+
+    <form action="/new-product" method="post">
+
+        <label for="Comapny">Company</label>
+        <select name="company" id="company">
+
+            <% companies.forEach(comp=>{%>
+
+                <option value="<%=comp.id%>">
+                    <%= comp.name%>
+                </option>
+
+                <%})%>
+
+        </select> <br> <br>
+
+        <label for="name">Product Name</label>
+        <input type="text" name="name" id="name"> <br> <br>
+
+        <label for="desc">Product Desc</label> <br>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea> <br> <br>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price"> <br> <br>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity"> <br> <br>
+
+        <input type="submit" value="Add Product">
+    </form>
+
+
+</body>
+
+</html>
