@@ -30,11 +30,13 @@
                     <td>Price</td>
                     <td>Quantity</td>
                     <td>Company</td>
+                    <td>Image</td>
                     <td>Actions</td>
                 </tr>
             </th>
+
             <tbody>
-                <%products.forEach(product=>{%>
+                <% products.forEach(product=>{ %>
                     <tr>
                         <td>
                             <%=product.product_id%>
@@ -44,6 +46,8 @@
                         </td>
                         <td>
                             <%=product.price%>
+                                <%let priceInDolars=(product.price / 130).toFixed(3) %>
+                                    <%=priceInDolars%>
                         </td>
                         <td>
                             <%=product.quantity%>
@@ -52,18 +56,33 @@
                             <%=product.companyName%>
                         </td>
                         <td>
+                            <img width="130px" src="./products/<%=product.productimage%>" alt="">
+                        </td>
+
+                        <td>
                             <a href="delete/<%=product.product_id%>">Delete</a>
 
                             <a href="edit">Edit</a>
                         </td>
+
                     </tr>
 
                     <%})%>
+
+
+
+
+
+
 
             </tbody>
         </table>
 
     </main>
+
+    <script>
+    // fe js
+    </script>
 
 </body>
 

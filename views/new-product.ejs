@@ -11,7 +11,7 @@
 <body>
     <h1>Add new Product</h1>
 
-    <form action="/new-product" method="post">
+    <form action="/new-product" method="post" enctype="multipart/form-data">
 
         <label for="Comapny">Company</label>
         <select name="company" id="company">
@@ -37,6 +37,9 @@
 
         <label for="quantity">Quantity</label>
         <input type="number" name="quantity" id="quantity"> <br> <br>
+
+        <label for="productimage">Product Image</label>
+        <input type="file" name="productimage" id="productimage"> <br> <br>
 
         <input type="submit" value="Add Product">
     </form>
